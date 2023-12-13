@@ -3,7 +3,7 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layoutDashboard.html}">
 <head>
-    <title>Nowe Zadanie -Organizer</title>
+    <title>New Task - Organizer</title>
 </head>
 
 <th:block layout:fragment="content">
@@ -12,7 +12,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Utwórz zgłoszenie</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Create new task</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -21,7 +21,7 @@
                       th:object="${newTask}" method="post">
                     <div class="modal-body">
                         <div class='form-group'>
-                            <label for='project'> Projekt</label><span class="required">*</span>
+                            <label for='project'>Project</label><span class="required">*</span>
                             <select id='project' th:field="${newTask.project}">
                                 <option th:each="project:${projectList}"
                                         th:value="${project.id}"
@@ -30,19 +30,19 @@
 
                                 ></option>
                             </select>
-                            <div th:if="${#fields.hasErrors('project')}" class="errorRED" th:errors="*{project}">Wybierz projekt </div>
+                            <div th:if="${#fields.hasErrors('project')}" class="errorRED" th:errors="*{project}">Choose the project</div>
 
                         </div>
                         <br>
 
-                        <div class='form-group'><label for='typeOfStory'> Typ zgłoszenia</label><span class="required">*</span>
+                        <div class='form-group'><label for='typeOfStory'>Type of story</label><span class="required">*</span>
                             <select id='typeOfStory' th:field="${newTask.typeOfStory}">
-                                <option th:each="type:${T(com.khryniewicki.organizer.main_content.model.TypeOfStory).values()}"
+                                <option th:each="type:${T(com.gbarwinski.organizerspring.main_content.model.TypeOfStory).values()}"
                                         th:value="${type}"
                                         th:text="${type}">
                                 </option>
                             </select>
-                            <div th:if="${#fields.hasErrors('typeOfStory')}" class="errorRED" th:errors="*{typeOfStory}">Wybierz typ zgłoszenia </div>
+                            <div th:if="${#fields.hasErrors('typeOfStory')}" class="errorRED" th:errors="*{typeOfStory}">Choose type of story</div>
 
                         </div>
 
@@ -52,34 +52,34 @@
                         </div>
                         <br>
                         <div class='form-group'>
-                            <label for='name'> Podsumowanie</label><span class="required">*</span>
+                            <label for='name'>Summary</label><span class="required">*</span>
                             <input id='name' class='form-control' type='text' th:field="${newTask.name}">
-                            <div th:if="${#fields.hasErrors('name')}" class="errorRED" th:errors="*{name}">Popraw nazwę podsumowania </div>
+                            <div th:if="${#fields.hasErrors('name')}" class="errorRED" th:errors="*{name}">Correct the summary name</div>
 
                         </div>
-                        <div class='form-group'><label for='description'> Opis</label>
+                        <div class='form-group'><label for='description'>Description</label>
                             <textarea id='description' class='form-control' type='text'
                                       th:field="${newTask.description}" rows="5"></textarea>
                             <div th:if="${#fields.hasErrors('description')}" th:errors="*{description}"
-                                 class="errorRED">Popraw nazwę opisu
+                                 class="errorRED">Correct the description name
                             </div>
 
                         </div>
 
 
-                        <div class='form-group'><label for='Priority'> Priorytet</label><span class="required">*</span>
+                        <div class='form-group'><label for='Priority'>Priority</label><span class="required">*</span>
                             <select id='Priority' th:field="${newTask.priority}">
-                                <option th:each="priority:${T(com.khryniewicki.organizer.main_content.model.Priority).values()}"
+                                <option th:each="priority:${T(com.gbarwinski.organizerspring.main_content.model.Priority).values()}"
                                         th:value="${priority}"
                                         th:text="${priority}"
                                 ></option>
                             </select>
-                            <div th:if="${#fields.hasErrors('Priority')}" th:errors="*{priority}">Wybierz priorytet </div>
+                            <div th:if="${#fields.hasErrors('Priority')}" th:errors="*{priority}">Choose the priority</div>
                         </div>
 
                         <div class="modal-footer">
-                            <button type="submit" class="btn btn-primary">Utwórz</button>
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Zakończ</button>
+                            <button type="submit" class="btn btn-primary">Create</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         </div>
 
                     </div>

@@ -20,7 +20,7 @@
         <a th:href="@{/createTask(id=${actualDashBoard.id})}" id="addCard"
            class="btn btn-primary btn-circle mx-2">
             <i class="fas fa-plus-square " data-toggle="modal"
-               data-target="#myModal" th:title="Utwórz"></i></a>
+               data-target="#myModal" th:title="Create"></i></a>
 
     </div>
 
@@ -48,20 +48,20 @@
                     <a class="btn dropdown-item" th:href="'/dashboard?id='+${project.id}" th:text="${project.name}"></a>
                 </div>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="/createProject"> + Utwórz projekt</a>
+                <a class="dropdown-item" href="/createProject">+ Create new project</a>
             </div>
         </div>
     </div>
 
     <div id="main">
         <div th:switch="${taskList}" class="container-fluid main">
-            <h2 th:case="null">Brak zadań</h2>
+            <h2 th:case="null">No tasks</h2>
             <div th:case="*">
                 <div class="container-fluid main" id="dashBoard">
                     <br>
                     <div id="dashBoardRef">
                         <h5>
-                            <a href="/projects" th:text="Projekty"></a>
+                            <a href="/projects" th:text="Projects"></a>
                             <a th:text="'/'"></a>
                             <a th:href="'/dashboard?id='+${actualDashBoard.id}"
                                th:text="${actualDashBoard.name}"></a>
@@ -70,7 +70,7 @@
 
                     </div>
 
-                    <div><h4>Tablica Kanban</h4></div>
+                    <div><h4>Kanban Board</h4></div>
                     <br>
                     <div class="form-group ">
                         <div class="row my-2 mx-1">
@@ -81,9 +81,9 @@
                                                class="form-control col-lg-8 col-md-8 col-sm-8 col-8 d-inline"
                                                type="text"
                                                name="myUsers"
-                                               placeholder="Dodaj użytkownika ">
+                                               placeholder="Add new user">
 
-                                        <button id="submitUser" class="btn btn-primary d-inline " type="button"> Dodaj
+                                        <button id="submitUser" class="btn btn-primary d-inline " type="button">Add
                                         </button>
                                     </div>
                                 </form>
@@ -122,10 +122,10 @@
                                                      ondragstart="drag(event)"
                                                      ondragend="hideAll()"
                                                      th:classappend="${
-                                                                     (task.priority==T(com.khryniewicki.organizer.main_content.model.Priority).LOW ? 'card  bg-light': '')
-                                                                     +(task.priority==T(com.khryniewicki.organizer.main_content.model.Priority).MEDIUM ? 'card text-white bg-primary': '')
-                                                                     +(task.priority==T(com.khryniewicki.organizer.main_content.model.Priority).HIGH  ? 'card text-white bg-warning': '')
-                                                                     +(task.priority==T(com.khryniewicki.organizer.main_content.model.Priority).URGENT  ? 'card text-white bg-danger': '')} ">
+                                                                     (task.priority==T(com.gbarwinski.organizerspring.main_content.model.Priority).LOW ? 'card  bg-light': '')
+                                                                     +(task.priority==T(com.gbarwinski.organizerspring.main_content.model.Priority).MEDIUM ? 'card text-white bg-primary': '')
+                                                                     +(task.priority==T(com.gbarwinski.organizerspring.main_content.model.Priority).HIGH  ? 'card text-white bg-warning': '')
+                                                                     +(task.priority==T(com.gbarwinski.organizerspring.main_content.model.Priority).URGENT  ? 'card text-white bg-danger': '')} ">
 
                                                     <div class="card-body ">
                                                         <h7 class="card-title" th:text="${task.name}"></h7>
@@ -134,13 +134,13 @@
                                                         <div id="icons">
                                                             <div class=""
                                                                  th:classappend="${
-                                                                                (task.typeOfStory==T(com.khryniewicki.organizer.main_content.model.TypeOfStory).STORY ?'badge badge-success': '' )
-                                                                                +(task.typeOfStory==T(com.khryniewicki.organizer.main_content.model.TypeOfStory).BUG ?'badge badge-danger': '' )}">
+                                                                                (task.typeOfStory==T(com.gbarwinski.organizerspring.main_content.model.TypeOfStory).STORY ?'badge badge-success': '' )
+                                                                                +(task.typeOfStory==T(com.gbarwinski.organizerspring.main_content.model.TypeOfStory).BUG ?'badge badge-danger': '' )}">
 
                                                                 <i class="" data-toggle="tooltip"
                                                                    th:title="${task.typeOfStory.toString().toLowerCase()}"
-                                                                   th:classappend="${(task.typeOfStory==T(com.khryniewicki.organizer.main_content.model.TypeOfStory).STORY ?'far fa-bookmark': '' )+
-                                                                                 (task.typeOfStory==T(com.khryniewicki.organizer.main_content.model.TypeOfStory).BUG ?'fas fa-bug': '' )}"></i>
+                                                                   th:classappend="${(task.typeOfStory==T(com.gbarwinski.organizerspring.main_content.model.TypeOfStory).STORY ?'far fa-bookmark': '' )+
+                                                                                 (task.typeOfStory==T(com.gbarwinski.organizerspring.main_content.model.TypeOfStory).BUG ?'fas fa-bug': '' )}"></i>
                                                             </div>
 
                                                             <div class="badge badge-light  ">

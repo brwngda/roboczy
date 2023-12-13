@@ -13,16 +13,16 @@
 <body>
 <form th:action="@{/register}" th:object="${newUser}" method="post">
     <div class="container-fluid containerForInputs">
-        <h4 class="text-light text-center">Rejestracja użytkownika</h4>
+        <h4 class="text-light text-center">User registration</h4>
         <br>
         <div class="form-group formContainer">
             <div class="row">
                 <div class="col-3">
-                    <label for="name_input">Imię</label>
+                    <label for="name_input">Name</label>
                 </div>
                 <div class=" col-6">
                     <input type="text" class="form-control " id="name_input" aria-describedby="nameHelp"
-                           placeholder="Wprowadź imię" th:field="*{firstName}">
+                           placeholder="Name" th:field="*{firstName}">
                 </div>
             </div>
 
@@ -37,11 +37,11 @@
         <div class="form-group formContainer">
             <div class="row">
                 <div class="col-3">
-                    <label for="surname_input">Nazwisko</label>
+                    <label for="surname_input">Last name</label>
                 </div>
                 <div class=" col-6">
                     <input type="text" class="form-control " id="surname_input" aria-describedby="surnameHelp"
-                           placeholder="Wprowadź nazwisko" th:field="*{secondName}">
+                           placeholder="Last name" th:field="*{secondName}">
                 </div>
             </div>
 
@@ -59,7 +59,7 @@
                 </div>
                 <div class=" col-6">
                     <input type="text" class="form-control " id="nick_input" aria-describedby="nick_inputHelp"
-                           placeholder="Wprowadź nick" th:field="*{nick}">
+                           placeholder="Nick" th:field="*{nick}">
                 </div>
             </div>
             <div class="row">
@@ -74,12 +74,12 @@
         <div class="form-group formContainer">
             <div class="row">
                 <div class="col-3">
-                    <label for="exampleInputEmail1">Adres email</label>
+                    <label for="exampleInputEmail1">Email address</label>
                 </div>
                 <div class=" col-6">
                     <input type="email" class="form-control " id="exampleInputEmail1"
                            aria-describedby="emailHelp"
-                           placeholder="Wprowadź email" th:field="*{email}">
+                           placeholder="Email address" th:field="*{email}">
                 </div>
             </div>
             <div class="row">
@@ -93,19 +93,18 @@
         <div class="form-group formContainer">
             <div class="row">
                 <div class="col-3">
-                    <label  for="exampleInputPassword1">Hasło</label>
+                    <label  for="exampleInputPassword1">Password</label>
                 </div>
                 <div class=" col-6">
                     <input type="password" class="form-control " id="exampleInputPassword1"
-                           placeholder="Wprowadź hasło"
+                           placeholder="Password"
                            aria-describedby="passwordHelp"
                            th:field="*{password}">
                 </div>
             </div>
             <div class="row text-wrap ">
                 <small id="passwordHelp" class="form-text offset-3 col-6 text-light ">
-                    Hasło powinno składać co najmniej z 8 znaków, w tym z wielkiej litery, cyfry i znaku
-                    specjalnego.</small>
+                    The password should consist of at least 8 characters, including capital letter, number and special character.</small>
                 <div class="offset-3 col-9 ">
                 <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}"
                       class="login-info-message">Password Error</span>
@@ -116,11 +115,11 @@
         <div class="form-group formContainer">
             <div class="row">
                 <div class="col-3">
-                    <label for="matchingPassword">Powtórz hasło </label>
+                    <label for="matchingPassword">Repeat the password</label>
                 </div>
                 <div class=" col-6">
                     <input type="password" class="form-control " id="matchingPassword"
-                           placeholder="Wprowadź powtórnie hasło"
+                           placeholder="Password"
                            th:field="*{matchingPassword}">
                 </div>
             </div>
@@ -136,11 +135,11 @@
             <div class="form-group formContainer">
                 <div class="row">
                     <div class="col-3">
-                        <label for="roles">Rola </label>
+                        <label for="roles">Role</label>
                     </div>
                     <div class=" col-3">
                         <select id="roles" th:field="*{roles}">
-                            <option th:each="role:${T(com.khryniewicki.organizer.registration_login_logout.DTO.Roles).values()}"
+                            <option th:each="role:${T(com.gbarwinski.organizerspring.registration_login_logout.DTO.Roles).values()}"
                                     th:value="${role}" th:text="${role}"></option>
                         </select>
                     </div>
@@ -154,9 +153,9 @@
                 </div>
             </div>
                 <br>
-                <a th:href="'/login'" class="btn btn-secondary float-right mx-1">Powrót do strony logowania</a>
+                <a th:href="'/login'" class="btn btn-secondary float-right mx-1">Return to login page</a>
 
-                <button type="submit" class="btn btn-primary float-right">Rejestruj</button>
+                <button type="submit" class="btn btn-primary float-right">Sign up</button>
 
             </div>
         </div>

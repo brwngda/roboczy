@@ -8,11 +8,11 @@
         <version>2.2.5.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.khryniewicki</groupId>
-    <artifactId>organizer</artifactId>
+    <groupId>com.gbarwinski</groupId>
+    <artifactId>organizer-spring</artifactId>
 
-    <name>organizer</name>
-    <description>Demo project for Spring Boot</description>
+    <name>organizer-spring</name>
+    <description>DProject management application</description>
 
 
     <properties>
@@ -44,7 +44,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.12</version>
+            <version>1.18.30</version>
             <scope>provided</scope>
         </dependency>
 
@@ -55,6 +55,10 @@
         <dependency>
             <groupId>nz.net.ultraq.thymeleaf</groupId>
             <artifactId>thymeleaf-layout-dialect</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.thymeleaf.extras</groupId>
+            <artifactId>thymeleaf-extras-springsecurity5</artifactId>
         </dependency>
 
         <dependency>
@@ -110,10 +114,6 @@
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-config</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.thymeleaf.extras</groupId>
-            <artifactId>thymeleaf-extras-springsecurity5</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.security</groupId>
@@ -190,6 +190,12 @@
             <artifactId>awaitility</artifactId>
             <version>3.0.0</version>
             <scope>test</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.codehaus.groovy/groovy -->
+        <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy</artifactId>
+            <version>3.0.8</version>
         </dependency>
 
     </dependencies>

@@ -3,7 +3,7 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layoutProjects.html}">
 <head>
-    <title>Edycja Projektu - Organizer</title>
+    <title>Project Edit - Organizer</title>
 </head>
 <th:block layout:fragment="editProject">
     <div class="modal fade" id="myEditProject" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel3"
@@ -11,7 +11,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel3">Edytuj zgłoszenie</h5>
+                    <h5 class="modal-title" id="exampleModalLabel3">Edit the story</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -21,20 +21,20 @@
                     <div class="modal-body">
 
                         <div class='form-group'>
-                            <label for='name'> Nazwa projektu</label><span class="required">*</span>
+                            <label for='name'>Project name</label><span class="required">*</span>
                             <input id="name" name="name" class='form-control' type='text'
                                    th:field="${oldProject.name}">
-                            <div th:if="${#fields.hasErrors('name')}" class="errorRED" th:errors="*{name}">Nazwij projekt </div>
+                            <div th:if="${#fields.hasErrors('name')}" class="errorRED" th:errors="*{name}">Add project name</div>
 
                         </div>
 
                         <br>
 
                         <div class='form-group'>
-                            <label for='description'> Opis projektu</label>
+                            <label for='description'>Description</label>
                             <input id="description" name="oldProject.description" class='form-control'
                                    type='text' th:field="${oldProject.description}">
-                            <div th:if="${#fields.hasErrors('description')}" class="errorRED" th:errors="*{description}">Dodaj opis </div>
+                            <div th:if="${#fields.hasErrors('description')}" class="errorRED" th:errors="*{description}">Add description</div>
 
                         </div>
                         <label> Avatar</label> <span class="required">*</span>
@@ -45,7 +45,7 @@
 
                             <button class="btn btn-secondary dropdown-toggle " type="button" id="dropdownMenuButton"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Wybierz avatar
+                                Choose avatar
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <div class="avatar_box" role="group">
@@ -69,23 +69,23 @@
                         <br>
 
                         <div class='form-group'>
-                            <label for='admin'> Kierownik projektu</label><span class="required">*</span>
+                            <label for='admin'>Project manager</label><span class="required">*</span>
                             <select id='admin' th:field="*{admin}" >
                                 <option th:each="user:${usersAssignedToProject}" th:value="${user.email} " aria-describedby="adminHelp"
                                         th:text="${user.name + ' '+ user.surname}"
                                         th:selected="${user.email==oldProject.admin}"></option>
                             </select>
-                            <small id="adminHelp" class="form-text text-muted">Zmiana kierownika projektu spowoduje brak dostępu do edycji.</small>
+                            <small id="adminHelp" class="form-text text-muted">Changing the project manager will result in the inability to edit.</small>
 
-                            <div th:if="${#fields.hasErrors('admin')}" class="errorRED" th:errors="*{admin}">Nazwij projekt </div>
+                            <div th:if="${#fields.hasErrors('admin')}" class="errorRED" th:errors="*{admin}">Add project name</div>
 
                         </div>
 
                         <div class="modal-footer">
                             <a type="button" th:href="@{/deleteProject(id=${oldProject.id})}"
-                               class="btn btn-warning">Usuń</a>
-                            <button type="submit" class="btn btn-primary">Zapisz</button>
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij
+                               class="btn btn-warning">Delete</a>
+                            <button type="submit" class="btn btn-primary">Save</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
                             </button>
                         </div>
                     </div>

@@ -3,7 +3,7 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layoutProjects.html}">
 <head>
-    <title>Nowy Projekt</title>
+    <title>New Project</title>
 </head>
 <th:block layout:fragment="addProject">
 
@@ -12,7 +12,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel2">Utwórz zgłoszenie</h5>
+                    <h5 class="modal-title" id="exampleModalLabel2">Create new project</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -22,21 +22,21 @@
                         <div class='form-group'>
                             <div class="row">
                                 <div class="col-4">
-                                    <label for='name'> Nazwa projektu</label><span class="required">*</span>
+                                    <label for='name'>Project name</label><span class="required">*</span>
                                 </div>
                                 <div class="offset-1 col-7">
                                     <input type="text" id="name" name="name" th:field="*{name}">
-                                    <div th:if="${#fields.hasErrors('name')}" class="errorRED" th:errors="*{name}">Nazwij projekt </div>
+                                    <div th:if="${#fields.hasErrors('name')}" class="errorRED" th:errors="*{name}">Add project name</div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-4">
-                                    <label for='description'> Opis projektu</label>
+                                    <label for='description'>Project description</label>
                                 </div>
                                 <div class="offset-1 col-7">
                                     <input type="text" id="description" name="description"
                                               th:field="*{description}">
-                                    <div th:if="${#fields.hasErrors('description')}" class="errorRED" th:errors="*{description}">Dodaj opis </div>
+                                    <div th:if="${#fields.hasErrors('description')}" class="errorRED" th:errors="*{description}">Add description</div>
 
                                 </div>
                             </div>
@@ -52,7 +52,7 @@
                                 <button class="btn btn-secondary dropdown-toggle " type="button"
                                         id="dropdownMenuButton2"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Wybierz avatar
+                                    Choose avatar
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
                                     <div class="avatar_box" role="group">
@@ -76,8 +76,8 @@
                             <br>
 
                             <div class="modal-footer">
-                                <button type="submit" class="btn btn-primary">Utwórz</button>
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Zakończ</button>
+                                <button type="submit" class="btn btn-primary">Create</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                             </div>
                         </div>
                     </div>

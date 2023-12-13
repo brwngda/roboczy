@@ -3,22 +3,22 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layoutProjects.html}">
 <head>
-    <title>Projekty-Organizer</title>
+    <title>Projects-Organizer</title>
 </head>
 <th:block layout:fragment="projects_panel">
     <br>
     <div class="row">
         <div class="col-2">
-            <h4>Projekty</h4>
+            <h4>Projects</h4>
         </div>
         <div class="offset-8 col-2">
             <a th:href="@{/createProject}" id="addProject" class="btn btn-primary" data-toggle="modal" data-target="#myProjects"
-                    title="Utwórz">Utwórz projekt
+                    title="Create">Create new project
             </a>
         </div>
     </div>
     <br>
-    <h7 class="mx-2">Ostatnie</h7>
+    <h7 class="mx-2">Last projects</h7>
     <div class="container-fluid my-2" id="project_browser">
         <div id="projects_container" class="scroll-bar">
 
@@ -60,10 +60,10 @@
             <thead>
             <tr>
                 <th scope="col"><i class="fas fa-star" id="icon_star_table"></i></th>
-                <th scope="col">Nazwa</th>
-                <th scope="col">Klucz</th>
-                <th scope="col">Typ</th>
-                <th scope="col">Kierownik</th>
+                <th scope="col">Name</th>
+                <th scope="col">Key</th>
+                <th scope="col">Type</th>
+                <th scope="col">Manager</th>
             </tr>
             </thead>
             <tbody>
@@ -74,13 +74,13 @@
                     <a th:href="@{'/dashboard'(id=${project.id})}" id="table_project_name" th:text="${project.name}" ></a>
                 </td>
                 <td th:text="${project.id}"></td>
-                <td th:text="'Klasyczne oprogramowanie'"></td>
+                <td th:text="'Classic software'"></td>
                 <td >
 
                     <a th:text="${project.admin}" >
                     </a>
                     <a th:href="@{/editproject(id=${project.id})}"><i class="fas fa-cogs"  id="cogs" data-toggle="modal"
-                    data-target="#myProjectEdit" th:title="Edytuj">
+                    data-target="#myProjectEdit" th:title="Edit">
                     </i></a>
                 </td>
             </tr>

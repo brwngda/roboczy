@@ -17,17 +17,17 @@
         <br>
         <div class="row">
             <div class="col-2">
-                <h4 class="px-3">Projekty</h4>
+                <h4 class="px-3">Projects</h4>
             </div>
             <div class="offset-lg-7 col-lg-3 offset-md-7 col-md-3 offset-sm-6 col-sm-4  offset-4 col-6 float-right">
                 <a th:href="@{/createProject}" id="addProject" class="btn btn-primary float-right mx-3"
                    data-toggle="tooltip"
-                   title="Utwórz">Utwórz projekt
+                   title="Create">Create new project
                 </a>
             </div>
         </div>
         <br>
-        <h7 class="px-3">Ostatnie</h7>
+        <h7 class="px-3">Last Projects</h7>
     </div>
     <div class="container-fluid my-2" id="project_browser">
 
@@ -56,7 +56,7 @@
                         </a>
                     </div>
                     <a class="w-100" id="bottom_bar-card">
-                        <div class="mx-3 float-right" th:text="'Tabela '+${project.id} " style="text-align: left"></div>
+                        <div class="mx-3 float-right" th:text="'Table'+${project.id} " style="text-align: left"></div>
                     </a>
                     </a>
                 </div>
@@ -71,10 +71,10 @@
                 <thead>
                 <tr>
                     <th scope="col"><i class="fas fa-star" id="icon_star_table"></i></th>
-                    <th scope="col">Nazwa</th>
-                    <th scope="col">Klucz</th>
-                    <th scope="col">Typ</th>
-                    <th scope="col">Kierownik</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Key</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Manager</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -89,7 +89,7 @@
                         </div>
                     </td>
                     <td th:text="${project.id}"></td>
-                    <td th:text="'Klasyczne oprogramowanie'"></td>
+                    <td th:text="'Classic software'"></td>
                     <td>
                         <div class="columnWithIcon">
                             <div th:each="adminNameAndSurname:${allAdminsInitialsList}"
@@ -108,7 +108,7 @@
                             <a th:href="@{/editproject(id=${project.id})}"
                                th:classappend="${ActualUser.email==project.admin} ? '':'btn disabled '"><i
                                     class="fas fa-cogs icon " id="cogs" data-toggle="tooltip"
-                                    th:title="Edytuj">
+                                    th:title="Edit">
                             </i></a>
                         </div>
                     </td>
